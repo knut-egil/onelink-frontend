@@ -12,7 +12,7 @@ function Register(props: RegisterProps) {
   const [password, setPassword] = useState<string>();
   const [confirmPassword, setConfirmPasword] = useState<string>();
 
-  const [statusText, setStatusText] = useState<string>("An error occured!");
+  const [statusText, setStatusText] = useState<string>();
   const [statusState, setStatusState] = useState<"success" | "failure">(
     "failure"
   );
@@ -46,14 +46,25 @@ function Register(props: RegisterProps) {
       // Get response data
       const data: UserDto = await res.json();
 
-      // Handle success :)
-      props?.onRegistered(data);
+      // Set status text & state
+      setStatusState("success");
+      setStatusText("Successfully created account!");
+
+      setTimeout(() => {
+        // Handle success :)
+        props?.onRegistered(data);
+      }, 100 * 5);
     } catch (err) {
       // Failed register
       const { stack, message } = err as Error;
       console.error(`Account creation failed, error: ${stack ?? message}`);
 
       // Tell the user it failed!
+      // Set status text & state
+      setStatusState("failure");
+      setStatusText("Failed creating account.");
+
+      // Todo, use response error message as message.
     }
   }
 
