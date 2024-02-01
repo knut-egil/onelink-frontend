@@ -20,21 +20,19 @@ function Register() {
 
     // Log
     console.log(
-      `Created account! Payload: ${JSON.stringify(payload, null, 2)}`
+      `Attempting to create account: ${JSON.stringify(payload, null, 2)}`
     );
 
     try {
       // Make register requests
-      const res = await fetch(
-        "https://webhook.site/e610e775-96bc-48b7-9802-c49a627ce27b/api/register",
-        {
-          method: "post",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      // TODO: Create some easy-to-update endpoint file
+      const res = await fetch("/api/register", {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
       // Check ok status
       if (!res.ok) throw new Error("Non-ok status!");
