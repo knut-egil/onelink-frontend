@@ -29,7 +29,25 @@ function Header(props: {
   );
 }
 
-function Profile() {
+type LinkIcons = "instagram" | "github" | "discord" | string;
+type SocialLink = {
+  id: string;
+  url: string;
+  title: string;
+  icon?: LinkIcons;
+};
+
+type ProfileProps = {
+  links: SocialLink[];
+};
+
+function Profile(props: ProfileProps) {
+  const IconMap: { [key in LinkIcons]: string } = {
+    instagram: InstagramLogo,
+    github: GithubLogo,
+    discord: DiscordLogo,
+  };
+
   const profileImageUrl = "https://picsum.photos/200";
   const [imgDataUri, setImgDataUri] = useState<string>();
   const [avgImgColor, setAvgImgColor] = useState<string>();
@@ -98,36 +116,22 @@ function Profile() {
             extras={["Software Developer", "Norway"]}
           />
           <div className="link-container">
-            <button className="link">
-              <div className="icon">#</div>
-              <div className="link-title">
-                <span>// Implement</span>
-              </div>
-            </button>
-            <button className="link">
-              <div className="icon">
-                <img src={InstagramLogo} />
-              </div>
-              <div className="link-title">
-                <span>// Instagram</span>
-              </div>
-            </button>
-            <button className="link">
-              <div className="icon">
-                <img src={GithubLogo} />
-              </div>
-              <div className="link-title">
-                <span>// GitHub</span>
-              </div>
-            </button>
-            <button className="link">
-              <div className="icon">
-                <img src={DiscordLogo} />
-              </div>
-              <div className="link-title">
-                <span>// Discord</span>
-              </div>
-            </button>
+            {(props.links ?? []).map((link) => {
+              return (
+                <a href={link.url} className="link" link-id={link.id}>
+                  <div className="icon">
+                    {link.icon && IconMap[link.icon] ? (
+                      <img src={IconMap[link.icon]} />
+                    ) : (
+                      <>{link.icon}</>
+                    )}
+                  </div>
+                  <div className="link-title">
+                    <span>{link.title}</span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
