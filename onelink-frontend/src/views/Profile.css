@@ -24,11 +24,11 @@
   max-width: 768px;
 
   gap: 2em;
-
-  background-color: #00000020;
   padding: 2em;
-
   border-radius: 2em;
+
+  text-shadow: -1px 1px 3px #00000040;
+  background-color: #00000010;
 }
 
 .picture {
@@ -68,8 +68,8 @@
 
 .extra {
   display: inline-flex;
-  /*gap: 0.5em;*/
 
   font-size: 16px;
   font-weight: lighter;
+
 }
