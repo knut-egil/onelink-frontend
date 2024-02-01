@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Profile.css";
 
-import InstagramLogo from "../assets/logos/instagram-mark.svg";
+import InstagramLogo from "../assets/logos/instagram-mark-white.svg";
 import GithubLogo from "../assets/logos/github-mark-white.svg";
 import DiscordLogo from "../assets/logos/discord-mark-white.svg";
 
