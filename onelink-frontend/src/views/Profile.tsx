@@ -93,8 +93,24 @@ function Profile() {
             }
             extras={["Software Developer", "Norway"]}
           />
-          // Implement
-          <div className="link-container"></div>
+          <div className="link-container">
+            <button className="link">
+              <div className="icon">#</div>
+              <span>// Implement</span>
+            </button>
+            <button className="link">
+              <div className="icon">#</div>
+              <span>// Instagram</span>
+            </button>
+            <button className="link">
+              <div className="icon">#</div>
+              <span>// GitHub</span>
+            </button>
+            <button className="link">
+              <div className="icon">#</div>
+              <span>// Discord</span>
+            </button>
+          </div>
         </div>
       </div>
     </>

@@ -99,3 +99,30 @@
 }
 
 /* Link container */
+.link-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: fit-content;
+
+  place-items: center;
+
+  margin: 2em;
+  gap: 1em;
+}
+
+.link-container>a {
+  font-style: unset;
+}
+
+.link {
+  width: 60%;
+  min-width: fit-content;
+
+  padding: 0.6em 1em;
+}
+
+.icon {
+  position: fixed;
+}
