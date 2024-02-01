@@ -8,7 +8,7 @@
   }
 }
 
-.container {
+.page {
   display: flex;
   flex-direction: column;
 
@@ -19,8 +19,22 @@
   max-height: 100vh;
 
   place-items: center;
+  place-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 60%;
+
+  place-items: center;
 
   text-shadow: -1px 1px 3px #00000040;
+  background-color: #00000020;
+
+  border-radius: 1em;
+  overflow: hidden;
 }
 
 /* Header */
@@ -32,12 +46,13 @@
   width: fit-content;
   max-width: 768px;
 
-  margin: 2rem;
   gap: 2em;
   padding: 2em;
-  border-radius: 2em;
+  /*border-radius: 1em;*/
 
-  background-color: #00000010;
+  background-color: #00000020;
+  box-shadow: -1px 2px 3px #00000020;
+  ;
 }
 
 .picture {
