@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import "./Profile.css";
 
+import InstagramLogo from "../assets/logos/instagram-mark.svg";
+import GithubLogo from "../assets/logos/github-mark-white.svg";
+import DiscordLogo from "../assets/logos/discord-mark-white.svg";
+
 function Header(props: {
   profileImage: string;
   title: string;
@@ -96,19 +100,33 @@ function Profile() {
           <div className="link-container">
             <button className="link">
               <div className="icon">#</div>
-              <span>// Implement</span>
+              <div className="link-title">
+                <span>// Implement</span>
+              </div>
             </button>
             <button className="link">
-              <div className="icon">#</div>
-              <span>// Instagram</span>
+              <div className="icon">
+                <img src={InstagramLogo} />
+              </div>
+              <div className="link-title">
+                <span>// Instagram</span>
+              </div>
             </button>
             <button className="link">
-              <div className="icon">#</div>
-              <span>// GitHub</span>
+              <div className="icon">
+                <img src={GithubLogo} />
+              </div>
+              <div className="link-title">
+                <span>// GitHub</span>
+              </div>
             </button>
             <button className="link">
-              <div className="icon">#</div>
-              <span>// Discord</span>
+              <div className="icon">
+                <img src={DiscordLogo} />
+              </div>
+              <div className="link-title">
+                <span>// Discord</span>
+              </div>
             </button>
           </div>
         </div>
