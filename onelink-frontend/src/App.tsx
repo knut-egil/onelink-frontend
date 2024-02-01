@@ -1,10 +1,10 @@
 import "./App.css";
-import Register from "./views/Register";
+import Landing from "./views/Landing";
 
 function App() {
   return (
     <>
-      <Register></Register>
+      <Landing />
     </>
   );
 }
