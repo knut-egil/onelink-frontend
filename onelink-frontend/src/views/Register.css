@@ -37,6 +37,7 @@
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 1rem;
+  user-select: none;
 }
 
 input {
@@ -77,18 +78,19 @@ input:focus {
 form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 
-a.link {
+button.link {
   display: inline-flex;
 
   color: inherit;
   background-color: #00000020;
   box-shadow: -1px 2px 3px #00000020;
 
-  height: 2em;
-  max-height: 2em;
+  height: 3em;
+  max-height: 3em;
 
   min-width: fit-content;
   width: 100%;
@@ -106,12 +108,21 @@ a.link {
   transition: background-color 0.1s;
 }
 
-a.link:hover {
+button.link:hover {
   color: inherit;
   background-color: #00000046;
+  border: inherit;
+  outline: none;
 }
 
-a.link:active {
+button.link:active {
   color: inherit;
   background-color: #00000050;
+  outline: none;
+  border: inherit;
+}
+
+button.link:focus {
+  outline: none;
+
 }
