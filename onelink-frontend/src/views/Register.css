@@ -31,6 +31,8 @@
 
   border-radius: 1em;
   overflow: hidden;
+
+  box-shadow: -1px 2px 3px #00000020;
 }
 
 .title {
@@ -51,6 +53,7 @@ input {
   padding: 2px 4px;
 
   margin-bottom: 0.5em;
+  box-shadow: -1px 2px 3px #00000020;
 }
 
 input:-webkit-autofill {
@@ -81,6 +84,26 @@ form {
   width: 100%;
 }
 
+.status {
+  font-size: 1em;
+
+  align-self: center;
+  background-color: #202020d0;
+  box-shadow: -1px 2px 3px #00000040;
+
+  border-radius: 4px;
+  padding: 0.1em 0.6em;
+
+  margin-bottom: 0.5em;
+}
+
+.success {
+  background-color: hsla(120, 90%, 40%, 1);
+}
+
+.failure {
+  background-color: hsl(0, 100%, 60%, 1);
+}
 
 button.link {
   display: inline-flex;

@@ -12,6 +12,11 @@ function Register(props: RegisterProps) {
   const [password, setPassword] = useState<string>();
   const [confirmPassword, setConfirmPasword] = useState<string>();
 
+  const [statusText, setStatusText] = useState<string>("An error occured!");
+  const [statusState, setStatusState] = useState<"success" | "failure">(
+    "failure"
+  );
+
   async function onSubmit(event: React.FormEvent) {
     // Prevent any accidental auto-form submissions!
     event.preventDefault();
@@ -107,6 +112,13 @@ function Register(props: RegisterProps) {
               required
             />
             <br />
+            {statusText ? (
+              <span className={`status${statusState ? ` ${statusState}` : ""}`}>
+                {statusText}
+              </span>
+            ) : (
+              <></>
+            )}
             <button type="submit" className="link">
               Register
             </button>
