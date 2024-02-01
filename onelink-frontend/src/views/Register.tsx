@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import AppConfig from "../Config";
+import UserContext from "../contexts/UserContext";
 import UserDto from "../models/UserDto";
 import "./Register.css";
 
@@ -69,8 +70,14 @@ function Register(props: RegisterProps) {
     }
   }
 
+  const { user } = useContext(UserContext);
+
   return (
     <>
+      {
+        // Redirect to front-page if signed in
+        user && <Navigate to={"/"} />
+      }
       <div className="page">
         <div className="container">
           <div className="title">Create Account</div>

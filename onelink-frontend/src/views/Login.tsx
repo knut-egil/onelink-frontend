@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Navigate } from "react-router-dom";
 import AppConfig from "../Config";
+import UserContext from "../contexts/UserContext";
 import UserDto from "../models/UserDto";
 import "./Login.css";
 
@@ -64,8 +66,14 @@ function Login(props: LoginProps) {
     }
   }
 
+  const { user } = useContext(UserContext);
+
   return (
     <>
+      {
+        // Redirect to front-page if signed in
+        user && <Navigate to={"/"} />
+      }
       <div className="page">
         <div className="container">
           <div className="title">Log in</div>
