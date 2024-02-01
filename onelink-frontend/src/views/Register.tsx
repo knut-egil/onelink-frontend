@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AppConfig from "../Config";
 import UserDto from "../models/UserDto";
 import "./Register.css";
@@ -134,6 +135,9 @@ function Register(props: RegisterProps) {
               Register
             </button>
           </form>
+          <Link to={"/login"} className="login">
+            Login
+          </Link>
         </div>
       </div>
     </>

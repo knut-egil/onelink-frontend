@@ -105,6 +105,13 @@ form {
   background-color: hsl(0, 100%, 60%, 1);
 }
 
+.login {
+  padding: unset;
+  margin-top: 0.5em;
+  background-color: unset;
+  color: white;
+}
+
 button.link {
   display: inline-flex;
 

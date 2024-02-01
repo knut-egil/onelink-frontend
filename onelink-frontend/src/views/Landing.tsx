@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Landing.css";
 function Landing() {
   return (
@@ -19,9 +20,9 @@ function Landing() {
             quickly looking at your visitors graphs.
           </p>
           <br />
-          <a href="/register" className="link">
+          <Link to={"/register"} className="link">
             Create an account
-          </a>
+          </Link>
         </div>
       </div>
     </>
