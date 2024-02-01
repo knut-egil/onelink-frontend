@@ -1,6 +1,12 @@
 import { useState } from "react";
+import AppConfig from "../Config";
+import UserDto from "../models/UserDto";
 import "./Register.css";
-function Register() {
+
+type RegisterProps = {
+  onRegistered(user: UserDto): void;
+};
+function Register(props: RegisterProps) {
   const [username, setUsername] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
@@ -18,15 +24,10 @@ function Register() {
       confirmPassword: confirmPassword,
     };
 
-    // Log
-    console.log(
-      `Attempting to create account: ${JSON.stringify(payload, null, 2)}`
-    );
-
     try {
       // Make register requests
       // TODO: Create some easy-to-update endpoint file
-      const res = await fetch("/api/register", {
+      const res = await fetch(AppConfig.endpoints.api.register, {
         method: "post",
         headers: {
           "content-type": "application/json",
@@ -38,12 +39,10 @@ function Register() {
       if (!res.ok) throw new Error("Non-ok status!");
 
       // Get response data
-      const data = await res.json();
+      const data: UserDto = await res.json();
 
       // Handle success :)
-      console.log(
-        `Account creation successful, data: ${JSON.stringify(data, null, 2)}`
-      );
+      props?.onRegistered(data);
     } catch (err) {
       // Failed register
       const { stack, message } = err as Error;
