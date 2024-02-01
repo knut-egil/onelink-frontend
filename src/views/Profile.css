@@ -109,7 +109,7 @@
   gap: 1em;
 }
 
-a.link {
+a.social-link {
   display: inline-flex;
 
   color: inherit;
@@ -134,12 +134,12 @@ a.link {
   transition: background-color 0.1s;
 }
 
-a.link:hover {
+a.social-link:hover {
   color: inherit;
   background-color: #00000046;
 }
 
-a.link:active {
+a.social-link:active {
   color: inherit;
   background-color: #00000050;
 }
