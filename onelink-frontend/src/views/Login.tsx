@@ -94,7 +94,7 @@ function Login(props: LoginProps) {
             <input
               type="password"
               name="password"
-              autoComplete="new-password"
+              autoComplete="curent-password"
               placeholder="password"
               onChange={(e) => {
                 setPassword(e.currentTarget.value);
