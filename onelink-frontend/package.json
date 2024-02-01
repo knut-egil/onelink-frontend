@@ -2,6 +2,7 @@
   "name": "onelink-frontend",
   "private": true,
   "version": "0.0.0",
+  "author": "Knut Egil V. Nygård <knut.egil.vn@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",
