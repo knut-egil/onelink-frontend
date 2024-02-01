@@ -22,7 +22,7 @@
   place-content: center;
 }
 
-.container {
+.profile-container {
   display: flex;
   flex-direction: column;
 

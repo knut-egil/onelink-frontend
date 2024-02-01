@@ -1,8 +1,13 @@
 const AppConfig = {
   endpoints: {
     api: {
-      register: "/api/register",
-      login: "/api/login",
+      register: "/auth/register",
+      login: "/auth/login",
+      profile: {
+        get(username: string): string {
+          return `/profile/${username}`;
+        },
+      },
     },
   },
 };

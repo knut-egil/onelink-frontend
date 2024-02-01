@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./views/Landing";
 import Register from "./views/Register";
 import Login from "./views/Login";
+import Profile from "./views/Profile";
 import UserDto from "./models/UserDto";
 import { useState } from "react";
 import UserContext from "./contexts/UserContext";
@@ -41,10 +42,11 @@ function App() {
           <Routes>
             <Route index element={<Landing />} />
             <Route
-              path="register"
+              path="/register"
               element={<Register onRegistered={onRegistered} />}
             />
-            <Route path="login" element={<Login onLoggedIn={onLoggedIn} />} />
+            <Route path="/login" element={<Login onLoggedIn={onLoggedIn} />} />
+            <Route path="/:username" element={<Profile />} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>
