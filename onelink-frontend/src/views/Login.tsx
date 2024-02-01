@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import AppConfig from "../Config";
 import UserContext from "../contexts/UserContext";
 import UserDto from "../models/UserDto";
@@ -113,6 +113,9 @@ function Login(props: LoginProps) {
               Login
             </button>
           </form>
+          <Link to={"/register"} className="register">
+            Register
+          </Link>
         </div>
       </div>
     </>
