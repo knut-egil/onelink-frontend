@@ -115,6 +115,8 @@
 .link {
   display: inline-flex;
 
+  background-color: #00000040;
+
   height: 4em;
   max-height: 4em;
 
