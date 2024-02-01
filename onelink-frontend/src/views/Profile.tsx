@@ -100,6 +100,19 @@ function Profile(props: ProfileProps) {
     });
   }, [profileImageUrl]);
 
+  function isSafeLink(value: string): boolean {
+    if (typeof value !== "string") return false;
+
+    // Check link format!
+    const urlPattern =
+      /^(http|https|mailto):\/\/[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,6}(\S*)?$/gm;
+
+    // Check link against pattern
+    if (!urlPattern.exec(value)) return false;
+
+    return true;
+  }
+
   return (
     <>
       <div className="page" style={{ backgroundColor: avgImgColor }}>
@@ -118,7 +131,12 @@ function Profile(props: ProfileProps) {
           <div className="link-container">
             {(props.links ?? []).map((link) => {
               return (
-                <a href={link.url} className="link" link-id={link.id}>
+                // Ensure link is safe!
+                <a
+                  href={isSafeLink(link.url) ? link.url : "/"}
+                  className="link"
+                  link-id={link.id}
+                >
                   <div className="icon">
                     {link.icon && IconMap[link.icon] ? (
                       <img src={IconMap[link.icon]} />
