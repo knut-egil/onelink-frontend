@@ -4,7 +4,7 @@ import UserDto from "../models/UserDto";
 import "./Register.css";
 
 type RegisterProps = {
-  onRegistered(user: UserDto): void;
+  onRegistered?(user: UserDto): void;
 };
 function Register(props: RegisterProps) {
   const [username, setUsername] = useState<string>();
@@ -52,7 +52,7 @@ function Register(props: RegisterProps) {
 
       setTimeout(() => {
         // Handle success :)
-        props?.onRegistered(data);
+        if (props.onRegistered) props.onRegistered(data);
       }, 100 * 5);
     } catch (err) {
       // Failed register
